@@ -2,10 +2,11 @@ from itertools import islice
 
 from grid import Grid
 from position import Position
+from robot import Robot
 
 fileInput = open('input.txt')
 
-gridSize = map(int, fileInput.readline().split())
+gridSize = [int(i) for i in (fileInput.readline().split())]
 grid = Grid(gridSize)
 
 while True:
@@ -16,4 +17,9 @@ while True:
 	robotPosition = Position(*nextRobotInput[0].split())
 	robotInstructions = nextRobotInput[1]
 
-	grid.processRobot(robotPosition, robotInstructions)
+	grid.processRobot(Robot(robotPosition), robotInstructions)
+
+	if grid.lastRobotLost:
+		print(grid.lastRobotPosition, ' LOST')
+	else:
+		print(grid.lastRobotPosition)

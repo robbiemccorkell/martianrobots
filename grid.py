@@ -6,23 +6,22 @@ class Grid:
 	def __init__(self, size):
 		self.size = size
 		self.lostPositions = []
+		self.lastRobotLost = False
 
-	def processRobot(self, robotPosition, robotInstructions):
-		robot = Robot(robotPosition)
-
-		isLost = False
+	def processRobot(self, robot, robotInstructions):
+		self.lastRobotLost = False
 		for instruction in robotInstructions:
 			lastKnownPos = copy.deepcopy(robot.position)
 			robot.processInstruction(instruction, self.lostPositions)
 			if (self.isOutOfBounds(robot.position)):
-				isLost = True
+				self.lastRobotLost = True
 				self.lostPositions.append(lastKnownPos)
 				break
 
-		if isLost:
-			print str(lastKnownPos) + ' LOST'
+		if self.lastRobotLost:
+			self.lastRobotPosition = lastKnownPos
 		else:
-			print robot.position
+			self.lastRobotPosition = robot.position
 
 	def isOutOfBounds(self, position):
 		return position.xPos > self.size[0] or position.yPos > self.size[1]
