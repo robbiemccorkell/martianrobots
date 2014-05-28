@@ -1,6 +1,6 @@
-#Martian Robots
+#Martian Robots [![Build Status](https://travis-ci.org/robbiemccorkell/martianrobots.svg?branch=master)](https://travis-ci.org/robbiemccorkell/martianrobots)
 
-Red Badger developer tech test https://travis-ci.org/robbiemccorkell/martianrobots.svg?branch=master
+Red Badger developer tech test
 
 ##Intro
 
