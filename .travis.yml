@@ -1,0 +1,10 @@
+language: python
+python:
+  - "2.6"
+  - "2.7"
+# command to install dependencies
+install: "pip install -r requirements.txt"
+# command to run unit tests
+script: python -m unittest unit-tests
+# command to run integration tests
+script: behave
