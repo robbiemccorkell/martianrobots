@@ -1,3 +1,4 @@
+import argparse
 from itertools import islice
 
 from grid import Grid
@@ -27,4 +28,8 @@ def readInput(path):
 
 
 if __name__ == "__main__":
-	readInput('input.txt')
+	parser = argparse.ArgumentParser(description='Drive robots around a grid')
+	parser.add_argument('file', metavar='file', type=str, help='a .txt input file to parse')
+	args = parser.parse_args()
+
+	readInput(args.file)
