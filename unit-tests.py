@@ -1,5 +1,5 @@
 import unittest
-from unittest.mock import MagicMock
+from mock import MagicMock
 from position import Position
 from robot import Robot
 from grid import Grid
