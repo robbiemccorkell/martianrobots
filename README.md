@@ -1,6 +1,6 @@
 #Martian Robots
 
-Red Badger developer tech test
+Red Badger developer tech test https://travis-ci.org/robbiemccorkell/martianrobots.svg?branch=master
 
 ##Intro
 
